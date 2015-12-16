@@ -1,0 +1,16 @@
+{
+  "name": "Presence",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "react-native start"
+  },
+  "dependencies": {
+    "ddp-client": "0.1.1",
+    "lodash": "^3.6.0",
+    "react-native": "^0.16.0",
+    "react-redux": "^3.1.2",
+    "redux": "^3.0.5",
+    "redux-thunk": "^1.0.0"
+  }
+}

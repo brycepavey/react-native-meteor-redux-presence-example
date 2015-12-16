@@ -1,0 +1,3 @@
+rootProject.name = 'Presence'
+
+include ':app'

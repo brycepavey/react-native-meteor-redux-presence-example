@@ -21,3 +21,5 @@ class User extends Component {
     )
   }
 }
+
+module.exports = User

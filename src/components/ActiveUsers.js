@@ -8,16 +8,13 @@ const {
 } = React
 const User = require('./User')
 
-
-
 const ActiveUsers = React.createClass({
-
-
-  componentWillMount: function() {
-    // console.log('-----MOUNT STATE-----')
-    // console.log(this.props)
-    this.datasource = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
+  getInitialState: function() {
+    return {
+      dataSource: new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
+    }
   },
+
 
   componentDidMount() {
     var _ = require('lodash');
@@ -43,7 +40,10 @@ const ActiveUsers = React.createClass({
     console.log(users.anonUsers)
     return (
       <View style={styles.container}>
-
+        <ListView
+          dataSource={this.state.dataSource.cloneWithRows(users.anonUsers)}
+          renderRow={this.renderRow}
+        />
       </View>
     )
   }

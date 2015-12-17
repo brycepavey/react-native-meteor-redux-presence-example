@@ -23,6 +23,8 @@ const ActiveUsers = React.createClass({
 
     var anonObserver = ddpClient.observe("anonUsers");
     anonObserver.added = () => updateUsers(_.cloneDeep(_.values(ddpClient.collections.anonUsers)));
+    anonObserver.changed = () => updateUsers(_.cloneDeep(_.values(ddpClient.collections.anonUsers)));
+    anonObserver.removed = () => updateUsers(_.cloneDeep(_.values(ddpClient.collections.anonUsers)));
 
   },
 

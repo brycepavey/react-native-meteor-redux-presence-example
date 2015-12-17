@@ -3,7 +3,7 @@ const {
 } = require('../actions/users')
 
 const initialState = {
-  users: [],
+  anonUsers: [],
   ddpClient: createDDP()
 }
 
@@ -25,12 +25,12 @@ function users(state = initialState, action) {
 
     switch (action.type) {
       case UPDATE_USERS:
-        userList =  action.users
+        userList =  action.anonUsers
         // console.log('-----USER LIST-----')
         // console.log(userList)
         return {
           ...state,
-          users: userList
+          anonUsers: userList
         };
       default:
         return state;

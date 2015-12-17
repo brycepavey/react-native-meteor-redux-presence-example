@@ -40,7 +40,7 @@ const ActiveUsers = React.createClass({
   render: function() {
     let { users } = this.props
     console.log('---USERS---')
-    console.log(users.users)
+    console.log(users.anonUsers)
     return (
       <View style={styles.container}>
 

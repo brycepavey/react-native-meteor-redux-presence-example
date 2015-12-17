@@ -1,10 +1,10 @@
 var actions = exports = module.exports
 
-exports.ADD_USER = 'ADD_USER'
+exports.UPDATE_USERS = 'UPDATE_USERS'
 
-exports.addUser = function addUser(user) {
+exports.updateUsers = function updateUsers(users) {
   return {
-    type: actions.ADD_USER,
-    user: user
+    type: actions.UPDATE_USERS,
+    users: users
   }
 }

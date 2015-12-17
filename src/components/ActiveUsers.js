@@ -22,10 +22,10 @@ const ActiveUsers = React.createClass({
   componentDidMount() {
     var _ = require('lodash');
 
-    let { ddpClient, addUser } = this.props
+    let { ddpClient, updateUsers } = this.props
 
     var anonObserver = ddpClient.observe("anonUsers");
-    anonObserver.added = () => addUser(_.cloneDeep(_.values(ddpClient.collections.anonUsers)));
+    anonObserver.added = () => updateUsers(_.cloneDeep(_.values(ddpClient.collections.anonUsers)));
 
   },
 

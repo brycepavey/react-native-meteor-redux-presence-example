@@ -1,5 +1,5 @@
 const {
-  ADD_USER
+  UPDATE_USERS
 } = require('../actions/users')
 
 const initialState = {
@@ -24,8 +24,8 @@ function users(state = initialState, action) {
     let list
 
     switch (action.type) {
-      case ADD_USER:
-        userList =  state.users.concat([action.user])
+      case UPDATE_USERS:
+        userList =  action.users
         // console.log('-----USER LIST-----')
         // console.log(userList)
         return {

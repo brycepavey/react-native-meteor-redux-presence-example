@@ -14,9 +14,19 @@ const ActiveUsers = React.createClass({
 
 
   componentWillMount: function() {
-    console.log('-----MOUNT STATE-----')
-    console.log(this.props)
+    // console.log('-----MOUNT STATE-----')
+    // console.log(this.props)
     this.datasource = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
+  },
+
+  componentDidMount() {
+    var _ = require('lodash');
+
+    let { ddpClient, addUser } = this.props
+
+    var anonObserver = ddpClient.observe("anonUsers");
+    anonObserver.added = () => addUser(_.cloneDeep(_.values(ddpClient.collections.anonUsers)));
+
   },
 
   renderRow: function(rowData) {
@@ -28,9 +38,9 @@ const ActiveUsers = React.createClass({
   },
 
   render: function() {
-    let users = this.props.users
-    // console.log('---USERS---')
-    // console.log(users)
+    let { users } = this.props
+    console.log('---USERS---')
+    console.log(users.users)
     return (
       <View style={styles.container}>
 

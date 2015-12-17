@@ -25,8 +25,9 @@ function users(state = initialState, action) {
 
     switch (action.type) {
       case ADD_USER:
-        // userList =  state.users.concat([action.user])
-
+        userList =  state.users.concat([action.user])
+        // console.log('-----USER LIST-----')
+        // console.log(userList)
         return {
           ...state,
           users: userList

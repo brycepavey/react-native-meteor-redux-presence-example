@@ -5,7 +5,8 @@ const UsersActions = require('../actions/users')
 
 function mapStateToProps(state) {
   return {
-    users: state.users.onlineUsers,
+    users: state.users,
+    ddpClient: state.users.ddpClient
   }
 }
 

@@ -14,12 +14,14 @@ const ActiveUsers = React.createClass({
 
 
   componentWillMount: function() {
+    console.log('-----MOUNT STATE-----')
+    console.log(this.props)
     this.datasource = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
   },
 
   renderRow: function(rowData) {
-    console.log('ROW DATA')
-    console.log(rowData)
+    // console.log('ROW DATA')
+    // console.log(rowData)
     return (
       <User name={rowData.username} />
     )
@@ -27,14 +29,11 @@ const ActiveUsers = React.createClass({
 
   render: function() {
     let users = this.props.users
-    console.log('---USERS---')
-    console.log(users)
+    // console.log('---USERS---')
+    // console.log(users)
     return (
       <View style={styles.container}>
-        <ListView
-          dataSource={this.dataSource.cloneWithRows(users)}
-          renderRow={this.renderRow}
-        />
+
       </View>
     )
   }
